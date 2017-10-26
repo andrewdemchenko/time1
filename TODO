@@ -1,0 +1,7 @@
+1. Add new classifier:
+- add k-nn;
+- find new one;
+2. Add parser to different classifiers.
+3. Create list of requirements for video quality
+
+4. Train on CNN (TensorFlow)
