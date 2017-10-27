@@ -38,14 +38,18 @@ data, label = process_folder({'0': normal,
 
 prepare_data_time = time()
 
-model = SGDClassifier(alpha=0.00001, average=False, class_weight=None, epsilon=0.1,
-                      eta0=0.0, fit_intercept=True, l1_ratio=0.15,
-                      learning_rate='optimal', loss='hinge', max_iter=50, n_iter=None,
-                      n_jobs=1, penalty='l2', power_t=0.5, random_state=None,
-                      shuffle=True, tol=None, verbose=0, warm_start=False)
+# model = SGDClassifier(alpha=0.00001, average=False, class_weight=None, epsilon=0.1,
+#                       eta0=0.0, fit_intercept=True, l1_ratio=0.15,
+#                       learning_rate='optimal', loss='hinge', max_iter=50, n_iter=None,
+#                       n_jobs=1, penalty='l2', power_t=0.5, random_state=None,
+#                       shuffle=True, tol=None, verbose=0, warm_start=False)
 
+from sklearn.neighbors.nearest_centroid import NearestCentroid
+model = NearestCentroid()
 model.fit(data, label)
-pickle.dump(model, open('./model/gradient_descent.pkl', 'wb'))
+NearestCentroid(metric='euclidean', shrink_threshold=None)
+
+pickle.dump(model, open('./model/knn.pkl', 'wb'))
 
 train_model_time = time()
 
