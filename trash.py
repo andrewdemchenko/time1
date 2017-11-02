@@ -21,9 +21,9 @@ sperm_mapping = {'0': 'Normal',
 
 start_time = time()
 
-model = pickle.load(open('./model/gradient_descent.pkl', 'rb'))
+model = pickle.load(open('./model/knn.pkl', 'rb'))
 
-image = cv2.imread("lol.jpg", 0)
+image = cv2.imread("./test/normal/1.png", 0)
 # height, width = image.shape
 # M1 = cv2.getRotationMatrix2D((height / 2, width / 2), 240, 1)
 # dst1 = cv2.warpAffine(image, M1, (height, width))
@@ -34,3 +34,17 @@ image = process_image(image)
 print ('Test data were prepared in {} seconds.'.format(time() - start_time))
 print ('{} sperm was predicted in {} seconds.'.format(list(map(lambda x: sperm_mapping.get(x),
                                                                model.predict(image)))[0], time() - start_time))
+
+# start_time = time()
+#
+# model = pickle.load(open('./model/knn.pkl', 'rb'))
+#
+# image = cv2.imread('1.jpg', 0)
+# ret1, thresh = cv2.threshold(image, 127, 255, 0)
+# thresh = np.array(thresh).flatten()
+#
+# print model.predict([thresh])[0]
+#
+# print ('Test data were prepared in {} seconds.'.format(time() - start_time))
+# print ('{} sperm was predicted in {} seconds.'.format(list(map(lambda x: sperm_mapping.get(x),
+#                                                                model.predict([thresh])))[0], time() - start_time))

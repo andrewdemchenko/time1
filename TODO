@@ -1,8 +1,6 @@
 Main:
-1. Add new classifier:
-- add k-nn;
-- find new one;
-2. Add parser to different classifiers.
+1. Refactor code
+2. Clean repository +
 3. Add README.md
 4. Create list of requirements for video quality
 
