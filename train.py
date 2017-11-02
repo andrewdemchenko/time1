@@ -20,10 +20,12 @@ def load_images_from_folder(folder):
         file_name = int(os.path.splitext(filename)[0])
 
 
-        if file_name <= 11520:
+        if file_name <= 5000:
             file_name = 1
-        elif 11520 < file_name:
+        elif 11520 < file_name <= 16520:
             file_name = 2
+	else:
+	    continue
 
         image = cv2.imread(os.path.join(folder, filename), 0)
         ret, image = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
