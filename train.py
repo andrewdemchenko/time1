@@ -20,9 +20,9 @@ def load_images_from_folder(folder):
         file_name = int(os.path.splitext(filename)[0])
 
 
-        if file_name <= 10000:
+        if file_name <= 7000:
             file_name = 1
-        elif 11520 < file_name <= 21520:
+        elif 11520 < file_name <= 18520:
             file_name = 2
 	else:
 	    continue
